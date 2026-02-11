@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=IM+Fell+English+SC&family=Great+Vibes&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #3e2723; /* Darker brown, elegant text */
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f0e6ef, #e0d4df); /* Soft, muted gradient */
+  background-image: url('https://www.transparenttextures.com/patterns/xv.png'); /* Subtle tapestry/aged paper texture */
+  color: #3e2723;
+  padding: 20px;
+  position: relative;
+}
+
+.App-header {
+  background-color: #fcf9f6; /* Aged parchment-like background */
+  border: 2px solid #b79c88; /* Soft, elegant border */
+  border-radius: 12px; /* Slightly less rounded */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Refined shadow */
+  padding: 30px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive; /* Elegant script font */
+  font-size: 4em;
+  margin-bottom: 25px;
+  color: #880e4f; /* Deep rose for headings */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container button {
+  background-color: #a0405c; /* Muted rose/burgundy */
+  color: #fcf9f6; /* Off-white text */
+  border: 2px solid #b79c88; /* Elegant border */
+  padding: 15px 40px;
+  border-radius: 8px; /* More refined corners */
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+  z-index: 10;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.buttons-container button:hover {
+  background-color: #880e4f; /* Darker rose on hover */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.response-message {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  font-weight: normal;
+  margin-top: 40px;
+  color: #880e4f; /* Deep rose for response message */
+  animation: fadeIn 1s ease-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.funny-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #5d4037; /* Soft dark brown for funny messages */
+  animation: fadeIn 0.5s ease-out;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 20px;
+    margin: 10px 0;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .buttons-container button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+  }
+  .response-message, .funny-message {
+    font-size: 1.8em;
+  }
+}

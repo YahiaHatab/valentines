@@ -1,0 +1,37 @@
+.ribbon-container {
+  position: absolute;
+  bottom: -100px; /* Position it significantly below the letter to be visible */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0; /* Behind the letter */
+}
+
+.ribbon-strip {
+  width: 20px;
+  height: 100px; /* Length of the ribbon */
+  background-color: #d4af37; /* Muted gold for ribbon */
+  border: 1px solid #8B4513; /* Brown border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.ribbon-end {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #d4af37; /* Triangular end */
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+
+.ribbon-text {
+  font-family: 'Cormorant Garamond', serif; /* Thematic font */
+  font-size: 1em;
+  color: #3e2723; /* Dark brown text */
+  margin-top: 5px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}

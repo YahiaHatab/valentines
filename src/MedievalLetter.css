@@ -1,0 +1,154 @@
+.medieval-letter-container {
+  margin: 40px auto;
+  max-width: 600px;
+  width: 90%;
+  aspect-ratio: 1.6 / 1;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 1s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  background-color: transparent;
+}
+
+/* Base of the envelope body */
+.envelope-body-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fcf9f6; /* Antique white for envelope */
+  border: 1px solid #b79c88; /* Soft brown border */
+  z-index: 1;
+}
+
+/* The actual letter content inside the envelope */
+.parchment-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fdf5e6; /* Classic parchment color */
+  border: 1px solid #b79c88; /* Soft brown border */
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+  pointer-events: none;
+  overflow-y: auto;
+  color: #333;
+}
+
+.parchment-content p {
+  white-space: pre-wrap;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Common styles for all flaps */
+.envelope-left-flap,
+.envelope-right-flap,
+.envelope-bottom-flap {
+  position: absolute;
+  background-color: #fcf9f6; /* Antique white for flaps */
+  border: 1px solid #b79c88; /* Soft brown border */
+  z-index: 3;
+}
+
+/* Left Flap */
+.envelope-left-flap {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transform-origin: left center;
+}
+
+/* Right Flap */
+.envelope-right-flap {
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  transform-origin: right center;
+}
+
+/* Bottom Flap */
+.envelope-bottom-flap {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  clip-path: polygon(0 50%, 50% 100%, 100% 50%, 100% 0, 0 0);
+  transform-origin: bottom center;
+}
+
+/* Top Flap (closing) */
+.envelope-top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fcf9f6; /* Antique white for top flap */
+  border: 1px solid #b79c88; /* Soft brown border */
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transform-origin: top center;
+  z-index: 4;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Position the stamp on the top flap */
+.envelope-top-flap .letter-stamp-container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Golden outline for the stamp when letter is closed */
+.medieval-letter-container:not(.open) .wax-seal {
+  box-shadow: 0 0 0 5px #d4af37, 0 0 10px rgba(0, 0, 0, 0.2); /* Muted gold outline */
+}
+
+/* Open state - when the letter is clicked */
+.medieval-letter-container.open .envelope-top-flap {
+  transform: rotateX(180deg);
+  z-index: 0;
+  cursor: default;
+}
+
+.medieval-letter-container.open .parchment-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.medieval-letter-container.open .letter-stamp-container {
+  display: none;
+}
+
+/* Hide other flaps when opened */
+.medieval-letter-container.open .envelope-left-flap,
+.medieval-letter-container.open .envelope-right-flap,
+.medieval-letter-container.open .envelope-bottom-flap {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .medieval-letter-container {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+}

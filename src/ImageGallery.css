@@ -1,0 +1,72 @@
+.image-gallery-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #fcf9f6; /* Aged parchment-like background */
+  background-image: url('https://www.transparenttextures.com/patterns/xv.png'); /* Subtle tapestry/aged paper texture */
+  border: 3px solid #b79c88; /* Soft brown border */
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  text-align: center;
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+  color: #3e2723; /* Darker brown, elegant text */
+}
+
+.image-gallery-container.pulled {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.image-gallery-container h2 {
+  color: #880e4f; /* Deep rose for heading */
+  font-family: 'Great Vibes', cursive; /* Elegant script font for heading */
+  font-size: 3em; /* Larger, more elegant heading */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-transform: none;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery-item {
+  border: 2px solid #b79c88; /* Delicate soft brown border */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  display: block;
+}
+
+.image-gallery-container p {
+  color: #3e2723; /* Darker brown for text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-gallery-container h2 {
+    font-size: 2em;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
