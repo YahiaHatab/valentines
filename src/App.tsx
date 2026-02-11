@@ -37,7 +37,7 @@ Forever Thine,
 [Yahia]`;
 
   const placeholderImages = [
-    process.env.PUBLIC_URL + '/images/Gina1.jpeg', // Replace with your actual image path, e.g., /images/your_first_photo.jpg
+    '/images/Gina1.jpeg', // Replace with your actual image path, e.g., /images/your_first_photo.jpg
     '/images/Gina2.jpeg', // Replace with your actual image path
     '/images/Gina3.jpeg', // Replace with your actual image path
     '/images/Gina4.jpeg', // Replace with your actual image path
